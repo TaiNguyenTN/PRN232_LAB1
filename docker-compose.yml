@@ -1,0 +1,30 @@
+version: "3.4"
+
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sql_server_container
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=Pass@word123
+    ports:
+      - "14330:1433"
+    volumes:
+      - sql_data:/var/opt/mssql
+
+  api:
+    image: prn232-lab1-api
+    container_name: dotnet_api_container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=db;Database=Lab1Db;User Id=sa;Password=Pass@word123;TrustServerCertificate=True;
+    depends_on:
+      - db
+
+volumes:
+  sql_data:

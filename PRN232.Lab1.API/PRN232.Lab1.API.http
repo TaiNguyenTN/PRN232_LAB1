@@ -1,0 +1,18 @@
+@PRN232.Lab1.API_HostAddress = http://localhost:5048
+
+GET {{PRN232.Lab1.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+
+# Students of a course (REST: nested resource)
+GET {{PRN232.Lab1.API_HostAddress}}/api/courses/1/students
+Accept: application/json
+
+###
+
+# Enrollments of a course (includes student)
+GET {{PRN232.Lab1.API_HostAddress}}/api/courses/1/enrollments
+Accept: application/json
+
+###

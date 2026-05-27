@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PRN232.Lab1.Services</name>
+    </assembly>
+    <members>
+        <member name="T:PRN232.Lab1.Services.Models.Requests.CourseRequest">
+            <summary>
+            Payload dùng để tạo/cập nhật Course.
+            </summary>
+        </member>
+        <member name="P:PRN232.Lab1.Services.Models.Requests.CourseRequest.CourseName">
+            <summary>
+            Tên course (tối đa 100 ký tự).
+            </summary>
+        </member>
+        <member name="P:PRN232.Lab1.Services.Models.Requests.CourseRequest.SemesterId">
+            <summary>
+            Id của Semester mà course thuộc về.
+            </summary>
+        </member>
+        <member name="T:PRN232.Lab1.Services.Models.Requests.EnrollmentRequest">
+            <summary>
+            Payload dùng để tạo/cập nhật Enrollment (đăng ký học).
+            </summary>
+        </member>
+        <member name="P:PRN232.Lab1.Services.Models.Requests.EnrollmentRequest.StudentId">
+            <summary>
+            Id của Student đăng ký.
+            </summary>
+        </member>
+        <member name="P:PRN232.Lab1.Services.Models.Requests.EnrollmentRequest.CourseId">
+            <summary>
+            Id của Course được đăng ký.
+            </summary>
+        </member>
+        <member name="P:PRN232.Lab1.Services.Models.Requests.EnrollmentRequest.EnrollDate">
+            <summary>
+            Ngày đăng ký (DateTime). Swagger thường nhập theo ISO 8601, ví dụ: <c>2026-05-21</c>.
+            </summary>
+        </member>
+        <member name="P:PRN232.Lab1.Services.Models.Requests.EnrollmentRequest.Status">
+            <summary>
+            Trạng thái enrollment (tối đa 20 ký tự), ví dụ: <c>Active</c>, <c>Completed</c>.
+            </summary>
+        </member>
+        <member name="T:PRN232.Lab1.Services.Models.Requests.SemesterRequest">
+            <summary>
+            Payload dùng để tạo/cập nhật Semester (học kỳ).
+            </summary>
+        </member>
+        <member name="P:PRN232.Lab1.Services.Models.Requests.SemesterRequest.SemesterName">
+            <summary>
+            Tên học kỳ (tối đa 100 ký tự).
+            </summary>
+        </member>
+        <member name="P:PRN232.Lab1.Services.Models.Requests.SemesterRequest.StartDate">
+            <summary>
+            Ngày bắt đầu (DateTime). Ví dụ: <c>2026-01-01</c>.
+            </summary>
+        </member>
+        <member name="P:PRN232.Lab1.Services.Models.Requests.SemesterRequest.EndDate">
+            <summary>
+            Ngày kết thúc (DateTime). Ví dụ: <c>2026-05-01</c>.
+            </summary>
+        </member>
+        <member name="T:PRN232.Lab1.Services.Models.Requests.StudentRequest">
+            <summary>
+            Payload dùng để tạo/cập nhật Student.
+            </summary>
+        </member>
+        <member name="P:PRN232.Lab1.Services.Models.Requests.StudentRequest.FullName">
+            <summary>
+            Họ và tên sinh viên (tối đa 100 ký tự).
+            </summary>
+        </member>
+        <member name="P:PRN232.Lab1.Services.Models.Requests.StudentRequest.Email">
+            <summary>
+            Email sinh viên (đúng định dạng email, tối đa 100 ký tự).
+            </summary>
+        </member>
+        <member name="P:PRN232.Lab1.Services.Models.Requests.StudentRequest.DateOfBirth">
+            <summary>
+            Ngày sinh (DateTime). Swagger thường nhập theo ISO 8601, ví dụ: <c>2000-01-31</c>.
+            </summary>
+        </member>
+        <member name="T:PRN232.Lab1.Services.Models.Requests.SubjectRequest">
+            <summary>
+            Payload dùng để tạo/cập nhật Subject (môn học).
+            </summary>
+        </member>
+        <member name="P:PRN232.Lab1.Services.Models.Requests.SubjectRequest.SubjectCode">
+            <summary>
+            Mã môn học (tối đa 20 ký tự), ví dụ: <c>PRN232</c>.
+            </summary>
+        </member>
+        <member name="P:PRN232.Lab1.Services.Models.Requests.SubjectRequest.SubjectName">
+            <summary>
+            Tên môn học (tối đa 100 ký tự).
+            </summary>
+        </member>
+        <member name="P:PRN232.Lab1.Services.Models.Requests.SubjectRequest.Credit">
+            <summary>
+            Số tín chỉ (1-10).
+            </summary>
+        </member>
+        <member name="T:PRN232.Lab1.Services.Models.Responses.CourseFlatResponse">
+            <summary>
+            Flat version of CourseResponse - dùng khi nhúng bên trong SemesterResponse hoặc EnrollmentResponse
+            để tránh circular reference (không chứa Semester hay Enrollments)
+            </summary>
+        </member>
+        <member name="T:PRN232.Lab1.Services.Models.Responses.EnrollmentFlatResponse">
+            <summary>
+            Flat version of EnrollmentResponse - dùng khi nhúng bên trong StudentResponse
+            để tránh circular reference (không chứa Student)
+            </summary>
+        </member>
+        <member name="T:PRN232.Lab1.Services.Models.Responses.StudentFlatResponse">
+            <summary>
+            Flat version of StudentResponse - dùng khi nhúng bên trong EnrollmentResponse
+            để tránh circular reference (không chứa Enrollments)
+            </summary>
+        </member>
+    </members>
+</doc>

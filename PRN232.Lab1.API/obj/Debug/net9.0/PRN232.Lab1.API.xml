@@ -1,0 +1,142 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PRN232.Lab1.API</name>
+    </assembly>
+    <members>
+        <member name="M:PRN232.Lab1.API.Controllers.CoursesController.GetAll(System.String,System.String,System.String,System.Int32,System.Int32,System.Boolean,System.String)">
+            <summary>
+            Retrieves a paginated list of courses.
+            </summary>
+            <param name="search">Search keyword for <c>CourseName</c> (case-insensitive substring match).</param>
+            <param name="sortBy">The field to sort by. Supported: <c>courseName</c>. Default: <c>courseId</c>.</param>
+            <param name="sortOrder">Sorting order: <c>asc</c> or <c>desc</c>. Default: <c>asc</c>.</param>
+            <param name="page">Page number (starting from 1). Default: 1.</param>
+            <param name="pageSize">Number of elements per page. Default: 10.</param>
+            <param name="expand">If <c>true</c>, includes related data (Course -> Semester).</param>
+            <param name="fields">
+            Comma-separated list of fields to return. Example: <c>courseId,courseName,semesterId</c>.
+            Case-insensitive; invalid fields will be ignored.
+            If left empty/null, all fields will be returned. Output keys are converted to camelCase.
+            </param>
+        </member>
+        <member name="M:PRN232.Lab1.API.Controllers.CoursesController.GetById(System.Int32,System.Boolean)">
+            <summary>
+            Retrieves a specific course by its ID.
+            </summary>
+            <param name="id">The unique identifier of the course.</param>
+            <param name="expand">If <c>true</c>, includes related Semester data.</param>
+        </member>
+        <member name="M:PRN232.Lab1.API.Controllers.CoursesController.GetStudentsByCourse(System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            Retrieves a paginated list of students enrolled in a specific course.
+            </summary>
+            <param name="courseid">The unique identifier of the course.</param>
+            <param name="page">Page number (starting from 1). Default: 1.</param>
+            <param name="pageSize">Number of elements per page. Default: 10.</param>
+            <param name="expand">
+            If <c>true</c>, includes each student's enrollments (filtered to the given course).
+            If <c>false</c>, returns <c>enrollments</c> as an empty string.
+            </param>
+        </member>
+        <member name="M:PRN232.Lab1.API.Controllers.CoursesController.GetEnrollmentsByCourse(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Retrieves a paginated list of enrollments for a specific course, including detailed student information.
+            </summary>
+            <param name="courseid">The unique identifier of the course.</param>
+            <param name="page">Page number (starting from 1). Default: 1.</param>
+            <param name="pageSize">Number of elements per page. Default: 10.</param>
+        </member>
+        <member name="M:PRN232.Lab1.API.Controllers.EnrollmentsController.GetAll(System.String,System.String,System.String,System.Int32,System.Int32,System.Boolean,System.String)">
+            <summary>
+            Retrieves a paginated list of enrollments.
+            </summary>
+            <param name="search">Search keyword for <c>Status</c> (case-insensitive substring match).</param>
+            <param name="sortBy">The field to sort by. Supported: <c>enrollDate</c>, <c>status</c>. Default: <c>enrollmentId</c>.</param>
+            <param name="sortOrder">Sorting order: <c>asc</c> or <c>desc</c>. Default: <c>asc</c>.</param>
+            <param name="page">Page number (starting from 1). Default: 1.</param>
+            <param name="pageSize">Number of elements per page. Default: 10.</param>
+            <param name="expand">If <c>true</c>, includes <c>Student</c> and <c>Course</c> data in the result.</param>
+            <param name="fields">
+            Comma-separated list of fields to return. Example: <c>enrollmentId,studentId,courseId,status</c>.
+            Case-insensitive; invalid fields will be ignored.
+            If left empty/null, all fields will be returned. Output keys are converted to camelCase.
+            </param>
+        </member>
+        <member name="M:PRN232.Lab1.API.Controllers.EnrollmentsController.GetById(System.Int32,System.Boolean)">
+            <summary>
+            Retrieves a specific enrollment by its ID.
+            </summary>
+            <param name="id">The unique identifier of the enrollment.</param>
+            <param name="expand">If <c>true</c>, includes related Student and Course data.</param>
+        </member>
+        <member name="M:PRN232.Lab1.API.Controllers.SemestersController.GetAll(System.String,System.String,System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            Retrieves a paginated list of semesters.
+            </summary>
+            <param name="search">Search keyword for <c>SemesterName</c> (case-insensitive substring match).</param>
+            <param name="sortBy">The field to sort by. Supported: <c>semesterName</c>, <c>startDate</c>. Default: <c>semesterId</c>.</param>
+            <param name="sortOrder">Sorting order: <c>asc</c> or <c>desc</c>. Default: <c>asc</c>.</param>
+            <param name="page">Page number (starting from 1). Default: 1.</param>
+            <param name="pageSize">Number of elements per page. Default: 10.</param>
+            <param name="fields">
+            Comma-separated list of fields to return. Example: <c>semesterId,semesterName,startDate,endDate</c>.
+            Case-insensitive; invalid fields will be ignored.
+            If left empty/null, all fields will be returned. Output keys are converted to camelCase.
+            </param>
+        </member>
+        <member name="M:PRN232.Lab1.API.Controllers.SemestersController.GetById(System.Int32,System.Boolean)">
+            <summary>
+            Retrieves a specific semester by its ID.
+            </summary>
+            <param name="id">The unique identifier of the semester.</param>
+            <param name="expand">If <c>true</c>, includes the list of courses belonging to this semester.</param>
+        </member>
+        <member name="M:PRN232.Lab1.API.Controllers.StudentsController.GetAll(System.String,System.String,System.String,System.Int32,System.Int32,System.Boolean,System.String)">
+            <summary>
+            Retrieves a paginated list of students.
+            </summary>
+            <param name="search">
+            Search keyword for <c>FullName</c> or <c>Email</c> (case-insensitive substring match).
+            </param>
+            <param name="sortBy">The field to sort by. Supported: <c>fullName</c>, <c>email</c>. Default: <c>studentId</c>.</param>
+            <param name="sortOrder">Sorting order: <c>asc</c> or <c>desc</c>. Default: <c>asc</c>.</param>
+            <param name="page">Page number (starting from 1). Default: 1.</param>
+            <param name="pageSize">Number of elements per page. Default: 10.</param>
+            <param name="expand">If <c>true</c>, includes the student's list of enrollments.</param>
+            <param name="fields">
+            Comma-separated list of fields to return. Example: <c>studentId,fullName,email</c>.
+            Case-insensitive; invalid fields will be ignored.
+            If left empty/null, all fields will be returned. Output keys are converted to camelCase.
+            </param>
+        </member>
+        <member name="M:PRN232.Lab1.API.Controllers.StudentsController.GetById(System.Int32,System.Boolean)">
+            <summary>
+            Retrieves a specific student by their ID.
+            </summary>
+            <param name="id">The unique identifier of the student.</param>
+            <param name="expand">If <c>true</c>, includes the student's list of enrollments.</param>
+        </member>
+        <member name="M:PRN232.Lab1.API.Controllers.SubjectsController.GetAll(System.String,System.String,System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            Retrieves a paginated list of subjects.
+            </summary>
+            <param name="search">Search keyword for <c>SubjectName</c> or <c>SubjectCode</c> (case-insensitive substring match).</param>
+            <param name="sortBy">The field to sort by. Supported: <c>subjectName</c>, <c>subjectCode</c>. Default: <c>subjectId</c>.</param>
+            <param name="sortOrder">Sorting order: <c>asc</c> or <c>desc</c>. Default: <c>asc</c>.</param>
+            <param name="page">Page number (starting from 1). Default: 1.</param>
+            <param name="pageSize">Number of elements per page. Default: 10.</param>
+            <param name="fields">
+            Comma-separated list of fields to return. Example: <c>subjectId,subjectCode,subjectName,credit</c>.
+            Case-insensitive; invalid fields will be ignored.
+            If left empty/null, all fields will be returned. Output keys are converted to camelCase.
+            </param>
+        </member>
+        <member name="M:PRN232.Lab1.API.Controllers.SubjectsController.GetById(System.Int32)">
+            <summary>
+            Retrieves a specific subject by its ID.
+            </summary>
+            <param name="id">The unique identifier of the subject.</param>
+        </member>
+    </members>
+</doc>
