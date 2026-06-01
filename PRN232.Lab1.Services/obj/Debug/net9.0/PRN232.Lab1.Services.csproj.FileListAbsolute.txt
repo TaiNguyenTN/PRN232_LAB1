@@ -15,3 +15,4 @@ C:\FPTU\Ky-8\PRN232\PRN232.Lab1\PRN232.Lab1.Services\obj\Debug\net9.0\PRN232.Lab
 C:\FPTU\Ky-8\PRN232\PRN232.Lab1\PRN232.Lab1.Services\obj\Debug\net9.0\ref\PRN232.Lab1.Services.dll
 c:\FPTU\Ky-8\PRN232\PRN232.Lab1\PRN232.Lab1.Services\bin\Debug\net9.0\PRN232.Lab1.Services.xml
 c:\FPTU\Ky-8\PRN232\PRN232.Lab1\PRN232.Lab1.Services\obj\Debug\net9.0\PRN232.Lab1.Services.xml
+C:\FPTU\Ky-8\PRN232\PRN232.Lab1\PRN232.Lab1.Services\obj\Debug\net9.0\PRN232.Lab1.Services.sourcelink.json

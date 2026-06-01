@@ -24,7 +24,7 @@ namespace PRN232.Lab1.API.Controllers
         /// <param name="sortOrder">Sorting order: <c>asc</c> or <c>desc</c>. Default: <c>asc</c>.</param>
         /// <param name="page">Page number (starting from 1). Default: 1.</param>
         /// <param name="pageSize">Number of elements per page. Default: 10.</param>
-        /// <param name="expand">If <c>true</c>, includes <c>Student</c> and <c>Course</c> data in the result.</param>
+        /// <param name="expand">Comma-separated list of related entities to include. Example: <c>student,course</c>.</param>
         /// <param name="fields">
         /// Comma-separated list of fields to return. Example: <c>enrollmentId,studentId,courseId,status</c>.
         /// Case-insensitive; invalid fields will be ignored.
@@ -37,7 +37,7 @@ namespace PRN232.Lab1.API.Controllers
             [FromQuery] string sortOrder = "asc",
             [FromQuery] int page = 1,
             [FromQuery] int pageSize = 10,
-            [FromQuery] bool expand = false,
+            [FromQuery] string expand = "",
             [FromQuery] string fields = null)
         {
             var pagedResult = await _enrollmentService.GetEnrollmentsAsync(search, sortBy, sortOrder, page, pageSize, expand, fields);

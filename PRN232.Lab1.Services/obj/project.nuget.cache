@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QEAlRQFQnWI=",
+  "dgSpecHash": "4LyQdIoBMrQ=",
   "success": true,
-  "projectFilePath": "C:\\FPTU\\Ky-8\\PRN232\\PRN232.Lab1\\PRN232.Lab1.Services\\PRN232.Lab1.Services.csproj",
+  "projectFilePath": "c:\\FPTU\\Ky-8\\PRN232\\PRN232.Lab1\\PRN232.Lab1.Services\\PRN232.Lab1.Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\automapper\\16.1.1\\automapper.16.1.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",

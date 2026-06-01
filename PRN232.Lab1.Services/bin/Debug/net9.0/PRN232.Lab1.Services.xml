@@ -116,6 +116,12 @@
             để tránh circular reference (không chứa Student)
             </summary>
         </member>
+        <member name="T:PRN232.Lab1.Services.Models.Responses.EnrollmentForCourseResponse">
+            <summary>
+            Represents an enrollment when viewed from within a Course context.
+            This version omits the 'Course' property to avoid redundancy.
+            </summary>
+        </member>
         <member name="T:PRN232.Lab1.Services.Models.Responses.StudentFlatResponse">
             <summary>
             Flat version of StudentResponse - dùng khi nhúng bên trong EnrollmentResponse

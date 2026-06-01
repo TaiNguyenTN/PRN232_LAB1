@@ -150,9 +150,12 @@ namespace PRN232.Lab1.Services.Services
         }
 
         public async Task<PagedResult<System.Dynamic.ExpandoObject>> GetEnrollmentsAsync(
-            string search, string sortBy, string sortOrder, int page, int pageSize, bool expand, string fields)
+            string search, string sortBy, string sortOrder, int page, int pageSize, string expand, string fields)
         {
-            var query = _enrollmentRepository.GetEnrollmentsQueryable(expand, expand);
+            bool includeStudent = !string.IsNullOrEmpty(expand) && expand.ToLower().Contains("student");
+            bool includeCourse = !string.IsNullOrEmpty(expand) && expand.ToLower().Contains("course");
+
+            var query = _enrollmentRepository.GetEnrollmentsQueryable(includeStudent, includeCourse);
 
             if (!string.IsNullOrEmpty(search))
             {

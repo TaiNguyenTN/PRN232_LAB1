@@ -167,3 +167,4 @@ c:\FPTU\Ky-8\PRN232\PRN232.Lab1\PRN232.Lab1.API\bin\Debug\net9.0\System.Diagnost
 c:\FPTU\Ky-8\PRN232\PRN232.Lab1\PRN232.Lab1.API\bin\Debug\net9.0\PRN232.Lab1.API.xml
 c:\FPTU\Ky-8\PRN232\PRN232.Lab1\PRN232.Lab1.API\bin\Debug\net9.0\PRN232.Lab1.Services.xml
 c:\FPTU\Ky-8\PRN232\PRN232.Lab1\PRN232.Lab1.API\obj\Debug\net9.0\PRN232.Lab1.API.xml
+C:\FPTU\Ky-8\PRN232\PRN232.Lab1\PRN232.Lab1.API\obj\Debug\net9.0\PRN232.Lab1.API.sourcelink.json
